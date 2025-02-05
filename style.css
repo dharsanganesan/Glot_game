@@ -1,0 +1,185 @@
+  @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap");
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Times New Roman', Times, serif;
+}
+
+.container {
+  border-radius: 35px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: white;
+  transition: 0.5s;
+}
+
+.nav {
+  border-radius: 15px;
+  position: fixed;
+  inset: 20px 0px 20px 20px;
+  width: 75px;
+  min-height: 500px;
+  background:black;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index:30 !important;
+}
+
+.nav.open {
+  width: 170px;
+  box-shadow: none;
+
+}
+
+.nav .main-toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.nav .main-toggle::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+  transform: translateY(-8px);
+  transition: 0.5s;
+}
+
+.nav.open .main-toggle::before {
+  transform: translateY(0) rotate(45deg);
+}
+
+.nav .main-toggle::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+  transform: translateY(8px);
+  transition: 0.5s;
+  box-shadow: 0 -8px 0 #fff;
+}
+
+.nav.open .main-toggle::after {
+  transform: translateY(0) rotate(-45deg);
+  box-shadow: none;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-top:60px;
+}
+
+.nav ul li {
+  list-style: none;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.nav ul li.active {
+  transform: translateX(30px);
+}
+
+.nav.open ul li.active {
+  transform: translateX(10px);
+}
+
+.nav ul li a {
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.nav ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 55px;
+  height: 55px;
+  line-height: 60px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.75em;
+  transition: 0.5s;
+}
+
+.nav ul li.active a .icon {
+  color:black;
+  background: var(--color);
+  padding-top: 15px;
+}
+
+.nav ul li a .icon::before {
+  content: "";
+  position: abslute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: var(--color);
+  filter: blur (8px);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.nav ul li.active a .icon::before {
+  opacity: 0.5;
+}
+
+.nav ul li a .text {
+    position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    margin-top: -27px;
+}
+
+.nav.open ul li a .text {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav ul li.active a .text {
+    color: var(--color);
+    padding-left: 15px;
+    padding-top: 30px;
+}
+.left-index {
+  margin-left: 20vh;
+  overflow-x: hidden;
+}
+/* index-page */
